@@ -34,55 +34,58 @@ stream.write("It works!"); // 输出结果：Received data: "It works!"
 //学生，老师，程序员继承人这个类，实现学生学习，老师教书，程序员写代码
 
 var Person= require("./person");
-
+//实现动态类
 var Stdudent = require("./student.js");
 var Teacher = require("./teacher.js");
 var Coder = require("./coder.js");
+var Overload = require("./overload.js");
 
 var personObj = new Person();
 var stdudentObj = new Stdudent();
 var teacherObj = new Teacher();
 var coderObj = new Coder();
+var overloadObj = new Overload();
 
-//console.log('--------for class of preson------------');
-//personObj.sleep();
-//personObj.eat();
-//console.log('--------------------');
-//
-//
+console.log('--------for class of preson------------');
+personObj.sleep();
+personObj.eat();
+console.log('--------------------');
+
 console.log('--------for class of Stdudent------------');
-
 stdudentObj.sleep();
 stdudentObj.eat();
 stdudentObj.study();
-console.log(stdudentObj.name);
+console.log('--------------------');
+
+console.log('--------for class of Teacher------------');
+teacherObj.sleep();
+teacherObj.eat();
+teacherObj.teach();
+console.log('--------------------');
+
+console.log('--------for class of Coder------------');
+coderObj.sleep();
+coderObj.eat();
+coderObj.code()
+console.log('--------------------');
+
+
+
+console.log('--------for class of Overload------------');
+overloadObj.sleep();
+overloadObj.eat();//重定义父函数eat
 
 console.log('--------------------');
-//
-//
-//
-//console.log('--------for class of Teacher------------');
-//teacherObj.sleep();
-//teacherObj.eat();
-//teacherObj.teach();
-//console.log('--------------------');
-//
-//
-//console.log('--------for class of Coder------------');
-//coderObj.sleep();
-//coderObj.eat();
-//coderObj.code()
-//console.log('--------------------');
 
 
 
+//实现静态类
 
+var student_static = require('./student_static.js')
 
-
-
-
-
-
+student_static.study();
+student_static.eat();
+student_static.sleep();
 
 
 

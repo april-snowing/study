@@ -11,5 +11,5 @@ module.exports.ignore = "ignore";
 module.exports.ignoreFun = function(){
 	console.log("ignoreFun");
 }
-console.log("module.exports");//module.exports和require返回的对象数据是相同的
-console.log(module.exports);
+console.log("module.exports");
+console.log(module.exports);//module.exports和require返回的对象数据是相同的

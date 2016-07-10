@@ -95,5 +95,38 @@
 		
 		util.inherits(constructor, superConstructor)通过构造函数，继承原型对象上的方法。构造函数的原型将被设置为一个新的 从超类创建的对象。
 		onstructor.super_来访问到superConstructor
+		
+		
+	prototype
+	
+		每一个构造函数都有一个属性叫做原型（prototype）------为一个特定类声明通用的变量或函数
+		prototype是一个对象，因此，你能够给它添加属性。你添加给prototype的属性将会成为使用这个构造函数创建的对象的通用属性。
+		当一个对象被创建时，这个构造函数 将会把它的属性prototype赋给新对象的内部属性__proto__。这个__proto__被这个对象用来查找它的属性。
+		你也可以通过prototype来给所有对象添加共用的函数。
+		这有一个好处：你不需要每次在构造一个对象的时候创建并初始化这个函数。	
+		构造函数的方法和属性每次创建一个实例的时候都会初始化，而prototype的不需要，它是所有对象共用的。且如果它的属性和方法和构造函数一样，依然返回的是构造
+		函数的值，不会修改构造函数初始了的方法和属性http://www.blueidea.com/articleimg/2006/07/3823/05.gif
 
+    constructor
+    	
+    	对象的constructor属性引用的该对象的构造函数
+    	使用function定义的对象与使用new操作符生成的对象之间有一个重要的区别
+    	-----是function定义的对象（所有函数都）有一个prototype属性，使用new生成的对象就没有这个prototype属性
+		prototype属性又指向了一个prototype对象，
+		在prototype对象中又有一个constructor属性，
+		这个constructor属性同样指向一个constructor对象，
+		而这个constructor对象恰恰就是这个function函数本身。
+		
+	new
+	
+		var one=new Person('js')-------var one={};Person.call(one,'js');  
+		一步是建立一个新对象（one）；
+		第二步将该对象（one）内置的原型对象设置为构造函数(Person)prototype 属性引用的那个原型对象；
+		第三步就是将该对象（one）作为this 参数调用构造函数(Person)，完成成员设置等初始化工作。
+		
 
+	单例模式
+	
+		保证一个类只有一个实例----实现方法：先判断实例存在与否，如果存在，就直接返回，如果不存在则会创建该对象，并将该对象保存在静态变量中，
+		当下次请求的时候，则可直接返回对象，
+		
