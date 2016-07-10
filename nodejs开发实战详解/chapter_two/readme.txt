@@ -14,3 +14,41 @@
 两种模块都会进行缓存，第二次require该模块的时候，不会重复开销去加载模块，只需要从缓存中读取相应模块数据
 
 
+
+exports和module.exports
+
+作用：将文件模块的方法和属性暴露给require返回的对象进行调用
+
+区别：exports的属性和方法都可以被module.exports代替 -----exports.name = 'gao'和module.exports.name = 'gao'作用一致
+exports是给module.exports添加属性和方法,module.exports和require返回的对象数据是相同的
+module.exports可以单独返回一个数据类型，exoports只能返回一个object对象
+module.exports = ["jia","you","april"],require返回的是array数组，
+当使用了module.exports关键词返回其他数据类型的时候，该模块中所有的exports对象执行的属性和方法都将忽略
+
+
+
+
+npm
+
+nodejs的包管理器，nodejs的一个库，基本的模块难以满足开发者需求，需要使用npm来管理开发者自我研发的一些模块，并使其能够公用于其他开发者
+开发者可以通过npm提交个人Nodejs模块成果，其他开发者可以使用npm下载模块包，应用到项目中
+npm -h
+npm-install module   安装模块
+npm-uninstall module 卸载模块
+全局安装
+npm-install -g module   安装模块
+
+npm模块安装时会在当前文件夹中产生node_modules目录，并在该目录中下载npm模块，当nodejs项目require一个模块的时候，会自动在当前目录的node_modules目录中
+加载所需的npm模块，因此也可以直接去github下载相应的模块。并将其放入项目中的node_modules文件夹
+
+本地安装 
+1. 将安装包放在 ./node_modules 下（运行npm时所在的目录） 
+2. 可以通过 require() 来引入本地安装的包
+
+全局安装 
+1. 将安装包放在 /usr/local 下 
+2. 可以直接在命令行里使用
+
+express---快速搭建WEB项目开发的框架，主要集成了web http服务器的创建，静态文件管理，服务器url请求处理，GET和POST请求分发，session处理等功能
+
+jade----
