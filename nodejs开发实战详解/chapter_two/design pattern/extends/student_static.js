@@ -8,7 +8,7 @@ function Student (){
 	util.inherits(Student,Person);
 
 	this.study = function(){
-		console.log("study~~~~~~");//和上面的相比，每次new一个对象的时候，要重新初始化study，而上面不一样，所有对象公用那个方法
+		console.log("study~~~~~~");
 	}
 }
 

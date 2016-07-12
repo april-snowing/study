@@ -116,6 +116,15 @@
 		在prototype对象中又有一个constructor属性，
 		这个constructor属性同样指向一个constructor对象，
 		而这个constructor对象恰恰就是这个function函数本身。
+		Class.prototype = {
+			constructor:Class,
+			show : function(){
+				console.log(this.book+"is write by"+this.name+",time is"+this.time);
+			}
+		}
+		Class.prototype.show 这种方法不会改变构造器的
+		Class.prototype = {}这种写法，Class.prototype的构造器会成为object,而不是原来的Class,需要手动设置成Class
+		
 		
 	new
 	
@@ -129,4 +138,16 @@
 	
 		保证一个类只有一个实例----实现方法：先判断实例存在与否，如果存在，就直接返回，如果不存在则会创建该对象，并将该对象保存在静态变量中，
 		当下次请求的时候，则可直接返回对象，
+	
+
+	适配器模式
+	  
+		若将一个类的接口转换成客户希望的另一个接口，Adapter（适配器）可使得原本由于接口不兼容而不能一起工作的那些类一起工作
+	
+	 装饰模式
+	 
+		动态的给一个对象添加一些额外的职责，在不改变基类的情况下，为基类新增属性和方法
 		
+	 工厂模式
+	 
+		定义一个用于创建对象的接口，让子类决定将哪一个类实例化，是一个类的实例化延迟到其子类
